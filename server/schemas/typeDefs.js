@@ -18,21 +18,21 @@ type Book {
   description: String
   title: String
   image: Int
-  link: [Reaction]
+  link: String
 }
 type Query {
   me: User
 }
 
+type Auth {
+  token: ID!
+  user: User
+}
 type Mutation {
   login(email: String!, password: String!): Auth
   addUser(username: String!, email: String!, password: String!): Auth
   saveBook(authors: String!, description: String!):User
   removeBook(bookId:ID!):User
-}
-type Auth {
-  token: ID!
-  user: User
 }
 `;
 // export the typeDefs
